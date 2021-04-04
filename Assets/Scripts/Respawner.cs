@@ -49,6 +49,11 @@ public class Respawner : MonoBehaviour
         }
     }
 
+    public void DestroyAll(string args) {
+        foreach(var obj in spawnObject)
+            Destroy(obj);
+    }
+
     // private void UpdateCenterObject() {
     //     Vector3 screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
     //     List<ARRaycastHit> hits = new List<ARRaycastHit>();
