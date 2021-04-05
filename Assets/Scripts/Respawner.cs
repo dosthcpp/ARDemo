@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,15 @@ public class Respawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(var obj in placeObjects) {
+            Texture2D m_tex = RuntimePreviewGenerator.GenerateModelPreview(GameObject.Find(obj.name).transform);
+            byte[] bytes = m_tex.EncodeToPNG();
+            var dirPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/SaveImages/";
+            if(!Directory.Exists(dirPath)) {
+                Directory.CreateDirectory(dirPath);
+            }
+            File.WriteAllBytes(dirPath + "Image_" + obj.name + ".png", bytes);
+        }
     }
 
     // Update is called once per frame
