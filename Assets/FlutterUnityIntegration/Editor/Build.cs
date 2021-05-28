@@ -45,7 +45,8 @@ public class Build
 
         EditorUserBuildSettings.androidBuildSystem = AndroidBuildSystem.Gradle;
 
-        var options = BuildOptions.AcceptExternalModificationsToPlayer;
+        var options = BuildOptions.AllowDebugging;
+        EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
         var report = BuildPipeline.BuildPlayer(
             GetEnabledScenes(),
             apkPath,
