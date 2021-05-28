@@ -40,7 +40,7 @@ namespace Photon.Realtime
 
         private const string DefaultContext = "Unity";
 
-        private const string DefaultToken = "VQ920wVUieLHT9c3v1ZCbytaLXpXbktUztKb3iYLCdiRKjUagcl6eg==";
+        private const string DefaultToken = "...";
 
         /// <summary>
         /// third parties custom context, if null, defaults to DefaultContext property value
